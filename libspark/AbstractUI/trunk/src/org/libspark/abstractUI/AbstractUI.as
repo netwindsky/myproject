@@ -1,0 +1,1 @@
+﻿package org.libspark.abstractUI {	import flash.display.Stage;			/**	 * @author Mk-10:cellfusion	 */	public class AbstractUI 	{		public static var _stage:Stage;				public static function initialize(stage:Stage):void		{			_stage = stage;		}	}}

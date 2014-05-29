@@ -1,0 +1,5 @@
+#!/bin/sh
+file=$1
+abcx.abx $1 > $1.c
+gcc -o ${file%abc}abx $1.c
+rm $1.c

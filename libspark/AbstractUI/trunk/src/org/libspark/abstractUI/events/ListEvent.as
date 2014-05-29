@@ -1,0 +1,1 @@
+﻿package org.libspark.abstractUI.events {	import flash.events.Event;	/**	 * @author Mk-10:cellfusion	 */	public class ListEvent extends Event 	{		public static const LIST_CHANGE:String = "listChanged";	}}
