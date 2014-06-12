@@ -56,7 +56,6 @@ public class HelloUserAction extends AbstractController{
     public void setViewPage(String viewPage) {   
        this.viewpage = viewPage;   
     }   
-      
     public String getViewPage() {   
        return viewpage;   
     }   

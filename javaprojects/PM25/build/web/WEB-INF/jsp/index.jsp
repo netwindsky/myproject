@@ -14,6 +14,25 @@
             <tt>index.jsp</tt> <i>, or create your own welcome page then change
                 the redirection in</i> <tt>redirect.jsp</tt> <i>to point to the new
                 welcome page and also update the welcome-file setting in</i>
-            <tt>web.xml</tt>.</p>
+                <tt>web.xml</tt>.</p>
+        <table border="0">
+            <thead>
+                <tr>
+                    <th>aaaaaaaaaa</th>
+                    <th>dffffffffffff</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>a</td>
+                    <td>a</td>
+                </tr>
+                <tr>
+                    <td>b</td>
+                    <td>b</td>
+                </tr>
+            </tbody>
+        </table>
+
     </body>
 </html>
