@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.util.*;   
 import javax.servlet.*;   
 import javax.servlet.http.*;   
+import javax.sql.DataSource;
 import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.servlet.mvc.Controller;   
 import org.springframework.web.servlet.ModelAndView;   
@@ -24,6 +25,7 @@ import org.springframework.web.socket.server.RequestUpgradeStrategy;
 public class HelloUserAction extends AbstractController{
     private String helloworld;
     private String viewpage;
+    private DataSource pm25datasource;
     public ModelAndView handleRequestInternal(HttpServletRequest rq,HttpServletResponse res) throws ServletException,IOException{
         setSupportedMethods(new String[]{"GET","POST"});//定义支持的模式
         rq.setCharacterEncoding("UTF-8");//get 中文乱码
@@ -43,11 +45,22 @@ public class HelloUserAction extends AbstractController{
         }
         session.setAttribute("accessCount", accessCount);
         //服务器session用法------------------------------------
+        
+        
+        //-----------------------数据连接池用法--------------------------------
+        
+        
+        
+        //--------------------------------------------------------
         Map model=new HashMap();
         model.put("helloWorld", "<xml><a>first</a></xml>");//HelloWorld和user值应用在对应的jsp文件内调用的变量
         model.put("user", user);
         model.put("count", accessCount);
         model.put("session", rq.getSession().getId());
+        
+        
+        
+        
         return new ModelAndView(getViewPage(),model);
     }
     public void handleRequestInternal(){
