@@ -79,7 +79,6 @@ public class HtmlParser extends EventSource{
                 //System.out.println("AAAAAAAAA----->>>"+link.text());
                 al.add(link.text());
             }
-
        return al;
     }
 }
