@@ -2,7 +2,7 @@ package org.lifeng.application.SmartScreen
 {
 	import adobe.utils.CustomActions;
 	
-	import com.greensock.TweenMax;
+	//import com.greensock.TweenMax;
 	
 	import flash.display.Sprite;
 	import flash.events.Event;
@@ -103,7 +103,7 @@ package org.lifeng.application.SmartScreen
 
 			metaListener= new Object();
 			metaListener.onMetaData = theMeta;
-			conn= new NetConnection();
+			
 			//video.deblocking=2;
 			//init("flvs/1.flv");
 			//var loader:URLLoader=new URLLoader();
@@ -122,7 +122,15 @@ package org.lifeng.application.SmartScreen
 		private function addtoStage(e:Event):void{
 
 			stage.addEventListener("stageVideoAvailability", onStageVideoAvailability);
+			conn= new NetConnection();
+			metaListener= new Object();
+			metaListener.onMetaData = theMeta;
 			
+			video = new Video();
+			video.width = 1920;
+			video.height = 1080;
+			video.smoothing=true;
+			addChild(video);
 		}
 		private function drawLine():void{
 			Linesprite.graphics.clear();
@@ -246,6 +254,7 @@ package org.lifeng.application.SmartScreen
 			if(videoArr.length>0){
 				
 				if(isautoplay){
+					trace(videoArr);
 					init(videoArr[p].path);
 				}
 			}
@@ -324,13 +333,13 @@ package org.lifeng.application.SmartScreen
 			if(brightNum>=.1){
 				brightNum-=.1;
 				//video.filters=FilterFactory.getBrightnessFilter(brightNum);
-				TweenMax.to(video, 1, {colorTransform:{brightness:brightNum}});
+				//TweenMax.to(video, 1, {colorTransform:{brightness:brightNum}});
 				
 			}
 		}
 		public function setBright(num:int):void{
 			brightNum=num*0.01
-			TweenMax.to(this, 3, {colorTransform:{brightness:brightNum}});
+			//TweenMax.to(this, 3, {colorTransform:{brightness:brightNum}});
 		}
 		public function seek(num:int):void{
 			stream.seek(stream.time+num);
@@ -437,7 +446,7 @@ package org.lifeng.application.SmartScreen
 			if(isGPU){
 			
 			}else{
-				video.clear();	
+				//video.clear();	
 			}
 			
 			video.attachNetStream(stream);
@@ -447,7 +456,7 @@ package org.lifeng.application.SmartScreen
 			
 			
 			//p++;
-			logTimer.start();
+			//logTimer.start();
 			//DatabaseServer.getInstance().LogTime();
 		}
 		
